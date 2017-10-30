@@ -23,7 +23,7 @@ private:
 robot_motion::robot_motion(ros::NodeHandle& n):nh_(n)
 {
     move_client.setup_connect(2700,"192.168.125.1");
-    move_requset_server=nh_.advertiseService("robot_move_request",&robot_motion::robot_move_request,this);
+    move_requset_server=nh_.advertiseService("robot_communication/robot_move_request",&robot_motion::robot_move_request,this);
 }
 
 robot_motion::~robot_motion()

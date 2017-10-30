@@ -20,6 +20,7 @@ private:
 robot_state::robot_state(ros::NodeHandle& n):nh_(n)
 {
     state_client.setup_connect(2700,"192.168.125.1");
+    robot_state_publisher=nh_.advertise<geometry_msgs::Pose>("robot_communication/robot_state",2);
 }
 
 robot_state::~robot_state()
